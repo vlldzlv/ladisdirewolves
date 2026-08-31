@@ -1,0 +1,8 @@
+{
+    "item.ladisdirewolves.direwolf_food": "Еда Лютоволка",
+    "item.ladisdirewolves.direwolf_token": "Жетон Лютоволка",
+    "item.ladisdirewolves.direwolf_treatment": "Вкусняшка",
+    "entity.ladisdirewolves.direwolf": "Лютоволк",
+    "item.ladisdirewolves.direwolf_spawn_egg": "Яйце призыва Лютоволка",
+    "itemGroup.ladisdirewolves": "Ladis' Direwolves"
+}
