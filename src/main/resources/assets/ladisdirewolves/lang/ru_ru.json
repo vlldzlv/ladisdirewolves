@@ -1,8 +1,11 @@
 {
     "item.ladisdirewolves.direwolf_food": "Еда Лютоволка",
-    "item.ladisdirewolves.direwolf_token": "Жетон Лютоволка",
+    "item.ladisdirewolves.direwolf_food.description": "Покормите им обычного волка, чтобы превратить его в свирепого Лютоволка. Не рекомендуется к употреблению.",
     "item.ladisdirewolves.direwolf_treatment": "Лакомство",
+    "item.ladisdirewolves.direwolf_treatment.description": "Используется для дрессировки Лютоволка. Даёт очки для прокачки характеристик.",
     "item.ladisdirewolves.whistle": "Свисток",
+    "item.ladisdirewolves.whistle.description": "Открывает интерфейс дрессировки Лютоволка для улучшения его параметров.",
+    "subtitle.ladisdirewolves.whistle_use": "Свисток",
     "entity.ladisdirewolves.direwolf": "Лютоволк",
     "gui.ladisdirewolves.direwolf": "Лютоволк",
     "gui.ladisdirewolves.treats": "Лакомства: %s",

@@ -7,7 +7,10 @@ modId = "${mod_id}"
 version = "${mod_version}"
 displayName = "${mod_name}"
 authors = "${mod_authors}"
-description = '''${mod_description}'''
+logoFile = "Ladis_Direwolves.png"
+description = """Ladis' Direwolves is a mod that transforms ordinary wolves into loyal, powerful, and upgradable companions. Forget about pets that quickly perish in battle — now your wolf will become a true combat partner and a reliable mount!
+
+Ladis' Direwolves — мод, который превращает обычных волков в верных, мощных и прокачиваемых спутников. Забудьте о питомцах, которые мгновенно погибают в бою — теперь ваш волк станет настоящим боевым партнёром и надёжным скакуном!"""
 
 [[dependencies.${mod_id}]]
     modId = "neoforge"

@@ -1,8 +1,11 @@
 {
     "item.ladisdirewolves.direwolf_food": "Direwolf Food",
-    "item.ladisdirewolves.direwolf_token": "Direwolf Token",
+    "item.ladisdirewolves.direwolf_food.description": "Feed it to a regular wolf to turn it into a ferocious Direwolf. Not recommended for consumption.",
     "item.ladisdirewolves.direwolf_treatment": "Direwolf Treat",
+    "item.ladisdirewolves.direwolf_treatment.description": "Used to train a Direwolf. Gives points to level up its stats.",
     "item.ladisdirewolves.whistle": "Whistle",
+    "item.ladisdirewolves.whistle.description": "Opens the Direwolf training interface to improve its stats.",
+    "subtitle.ladisdirewolves.whistle_use": "Whistle",
     "entity.ladisdirewolves.direwolf": "Direwolf",
     "gui.ladisdirewolves.direwolf": "Direwolf",
     "gui.ladisdirewolves.treats": "Treats: %s",

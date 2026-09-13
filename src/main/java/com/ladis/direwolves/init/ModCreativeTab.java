@@ -16,10 +16,9 @@ public class ModCreativeTab {
             CREATIVE_TABS.register("ladisdirewolves_tab",
                     () -> CreativeModeTab.builder()
                             .title(Component.translatable("itemGroup.ladisdirewolves"))
-                            .icon(() -> new ItemStack(ModItems.DIREWOLF_TOKEN.get()))
+                            .icon(() -> new ItemStack(ModItems.DIREWOLF_TREATMENT.get()))
                             .displayItems((params, output) -> {
                                 output.accept(ModItems.DIREWOLF_FOOD.get());
-                                output.accept(ModItems.DIREWOLF_TOKEN.get());
                                 output.accept(ModItems.DIREWOLF_TREATMENT.get());
                                 output.accept(ModItems.WHISTLE.get());
                                 output.accept(ModItems.DIREWOLF_SPAWN_EGG.get());

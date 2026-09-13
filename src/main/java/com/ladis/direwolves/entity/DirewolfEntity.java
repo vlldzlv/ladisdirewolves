@@ -153,6 +153,16 @@ public class DirewolfEntity extends Wolf implements GeoEntity, PlayerRideableJum
             }
             return InteractionResult.CONSUME;
         }
+        if (stack.is(ModItems.DIREWOLF_FOOD.get())) {
+            if (this.isTame() && !this.isDeadOrDying() && this.getHealth() < this.getMaxHealth()) {
+                this.setHealth(this.getMaxHealth());
+                if (!player.getAbilities().instabuild) {
+                    stack.shrink(1);
+                }
+                return InteractionResult.sidedSuccess(this.level().isClientSide);
+            }
+            return InteractionResult.CONSUME;
+        }
         if (stack.is(net.minecraft.world.item.Items.SADDLE)) {
             if (this.isTame() && this.isOwnedBy(player)) {
                 if (this.hasSaddle()) {
@@ -298,7 +308,7 @@ public class DirewolfEntity extends Wolf implements GeoEntity, PlayerRideableJum
         this.getEntityData().set(DATA_TREATS, this.getTreats() - 1);
         stat.addLevel(this);
         this.applyStatLevels();
-        this.playSound(SoundEvents.FOX_EAT, 1.0F, 1.0F);
+        this.playSound(SoundEvents.PLAYER_LEVELUP, 1.0F, 1.0F);
         return true;
     }
 
