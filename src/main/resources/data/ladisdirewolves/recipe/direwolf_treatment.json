@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "ladisdirewolves:direwolf_treatment",
+  "pattern": [
+    "abc",
+    "def",
+    "cba"
+  ],
+  "key": {
+    "a": { "item": "minecraft:wheat" },
+    "b": { "item": "minecraft:egg" },
+    "c": { "item": "minecraft:bone_block" },
+    "d": { "item": "minecraft:cooked_beef" },
+    "e": { "item": "minecraft:bone" },
+    "f": { "item": "minecraft:cooked_porkchop" }
+  },
+  "result": {
+    "id": "ladisdirewolves:direwolf_treatment",
+    "count": 1
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "criteria": {
+    "has_wheat": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [ { "items": "minecraft:wheat" } ]
+      }
+    },
+    "has_egg": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [ { "items": "minecraft:egg" } ]
+      }
+    },
+    "has_bone_block": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [ { "items": "minecraft:bone_block" } ]
+      }
+    },
+    "has_steak": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [ { "items": "minecraft:cooked_beef" } ]
+      }
+    },
+    "has_bone": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [ { "items": "minecraft:bone" } ]
+      }
+    },
+    "has_porkchop": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [ { "items": "minecraft:cooked_porkchop" } ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "ladisdirewolves:direwolf_treatment_b"
+      }
+    }
+  },
+  "requirements": [
+    [ "has_wheat" ],
+    [ "has_egg" ],
+    [ "has_bone_block" ],
+    [ "has_steak" ],
+    [ "has_bone" ],
+    [ "has_porkchop" ],
+    [ "has_the_recipe" ]
+  ]
+}

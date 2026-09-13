@@ -7,9 +7,12 @@ import software.bernie.geckolib.model.GeoModel;
 import com.ladis.direwolves.LadisDirewolves;
 import com.ladis.direwolves.entity.DirewolfEntity;
 
+import java.util.Set;
+
 public class DirewolfEntityModel extends GeoModel<DirewolfEntity> {
 
-    private static final String[] VARIANTS = { "default", "ashy", "black" };
+    private static final Set<String> VALID_TEXTURES = Set.of(
+            "default", "spotted", "snow", "rusty", "chestnut", "black", "ashy", "stripped", "forest");
 
     @Override
     public ResourceLocation getModelResource(DirewolfEntity object) {
@@ -18,8 +21,12 @@ public class DirewolfEntityModel extends GeoModel<DirewolfEntity> {
 
     @Override
     public ResourceLocation getTextureResource(DirewolfEntity object) {
-        int index = Math.floorMod(object.getUUID().hashCode(), VARIANTS.length);
-        return ResourceLocation.fromNamespaceAndPath(LadisDirewolves.MOD_ID, "textures/entity/direwolf_" + VARIANTS[index] + ".png");
+        String variant = VALID_TEXTURES.contains(object.getColorVariant())
+                ? object.getColorVariant()
+                : "default";
+        return ResourceLocation.fromNamespaceAndPath(
+                LadisDirewolves.MOD_ID,
+                "textures/entity/direwolf_" + variant + ".png");
     }
 
     @Override

@@ -8,6 +8,7 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import com.ladis.direwolves.LadisDirewolves;
 import com.ladis.direwolves.item.DirewolfFoodItem;
 import com.ladis.direwolves.item.DirewolfTreatmentItem;
+import com.ladis.direwolves.item.WhistleItem;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -21,6 +22,9 @@ public class ModItems {
 
     public static final DeferredHolder<Item, Item> DIREWOLF_TREATMENT =
             ITEMS.register("direwolf_treatment", () -> new DirewolfTreatmentItem(new Item.Properties()));
+
+    public static final DeferredHolder<Item, Item> WHISTLE =
+            ITEMS.register("whistle", () -> new WhistleItem(new Item.Properties().stacksTo(1)));
 
     public static final DeferredHolder<Item, Item> DIREWOLF_SPAWN_EGG =
             ITEMS.register("direwolf_spawn_egg",

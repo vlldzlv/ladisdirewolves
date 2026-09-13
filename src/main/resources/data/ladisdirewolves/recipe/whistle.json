@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "ladisdirewolves:whistle",
+  "pattern": [
+    "iii",
+    "bi "
+  ],
+  "key": {
+    "i": { "item": "minecraft:iron_ingot" },
+    "b": { "item": "minecraft:bone" }
+  },
+  "result": {
+    "id": "ladisdirewolves:whistle",
+    "count": 1
+  }
+}

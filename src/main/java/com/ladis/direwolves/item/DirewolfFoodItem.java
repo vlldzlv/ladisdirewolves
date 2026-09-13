@@ -1,8 +1,12 @@
 package com.ladis.direwolves.item;
 
+import net.minecraft.core.Holder;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.animal.Wolf;
 import net.minecraft.world.entity.player.Player;
@@ -16,6 +20,11 @@ public class DirewolfFoodItem extends Item {
 
     public DirewolfFoodItem(Properties properties) {
         super(properties);
+    }
+
+    @Override
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+        return InteractionResultHolder.pass(player.getItemInHand(hand));
     }
 
     @Override
@@ -36,6 +45,7 @@ public class DirewolfFoodItem extends Item {
                     newDirewolf.moveTo(wolf.getX(), wolf.getY(), wolf.getZ(), wolf.getYRot(), wolf.getXRot());
                     newDirewolf.setCustomName(wolf.getCustomName());
                     newDirewolf.setCustomNameVisible(wolf.isCustomNameVisible());
+                    newDirewolf.setColorVariant(variantKey(wolf.getVariant()));
 
                     if (wolf.isTame() && wolf.getOwnerUUID() != null) {
                         newDirewolf.tame(player);
@@ -57,5 +67,19 @@ public class DirewolfFoodItem extends Item {
             }
         }
         return InteractionResult.PASS;
+    }
+
+    private static String variantKey(Holder<net.minecraft.world.entity.animal.WolfVariant> variant) {
+        ResourceLocation id = variant.unwrapKey()
+                .map(ResourceKey::location)
+                .orElse(ResourceLocation.withDefaultNamespace("pale"));
+        return switch (id.getPath()) {
+            case "pale" -> "default";
+            case "ashen" -> "ashy";
+            case "snowy" -> "snow";
+            case "striped" -> "stripped";
+            case "woods" -> "forest";
+            default -> id.getPath();
+        };
     }
 }

@@ -9,5 +9,6 @@ public class DirewolfEntityRenderer extends GeoEntityRenderer<DirewolfEntity> {
 
     public DirewolfEntityRenderer(EntityRendererProvider.Context context) {
         super(context, new DirewolfEntityModel());
+        this.addRenderLayer(new SaddleGeoLayer(this));
     }
 }

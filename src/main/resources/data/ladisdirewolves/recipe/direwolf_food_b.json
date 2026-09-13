@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "ladisdirewolves:direwolf_food",
+  "pattern": [
+    "XBX",
+    "XXX"
+  ],
+  "key": {
+    "X": { "tag": "ladisdirewolves:direwolf_food_ingredients" },
+    "B": { "item": "minecraft:bowl" }
+  },
+  "result": {
+    "id": "ladisdirewolves:direwolf_food",
+    "count": 1
+  }
+}

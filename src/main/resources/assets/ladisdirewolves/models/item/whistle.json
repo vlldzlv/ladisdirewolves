@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "ladisdirewolves:item/direwolf_spawn_egg"
+        "layer0": "ladisdirewolves:item/whistle"
     }
 }
