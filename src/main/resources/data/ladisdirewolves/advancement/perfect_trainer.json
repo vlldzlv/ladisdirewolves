@@ -1,0 +1,24 @@
+{
+  "parent": "ladisdirewolves:dog_waltz",
+  "display": {
+    "icon": {
+      "id": "ladisdirewolves:whistle"
+    },
+    "title": {
+      "translate": "advancements.ladisdirewolves.perfect_trainer.title"
+    },
+    "description": {
+      "translate": "advancements.ladisdirewolves.perfect_trainer.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "all_maxed": {
+      "trigger": "ladisdirewolves:all_stats_maxed",
+      "conditions": {}
+    }
+  }
+}

@@ -309,7 +309,18 @@ public class DirewolfEntity extends Wolf implements GeoEntity, PlayerRideableJum
         stat.addLevel(this);
         this.applyStatLevels();
         this.playSound(SoundEvents.PLAYER_LEVELUP, 1.0F, 1.0F);
+        if (!this.level().isClientSide && this.hasMaxedAllStats() && this.getOwner() instanceof net.minecraft.server.level.ServerPlayer serverPlayer) {
+            com.ladis.direwolves.init.ModTriggers.ALL_STATS_MAXED.get().trigger(serverPlayer);
+        }
         return true;
+    }
+
+    public boolean hasMaxedAllStats() {
+        return this.getStrengthLevel() >= MAX_STAT_LEVEL
+                && this.getVitalityLevel() >= MAX_STAT_LEVEL
+                && this.getAgilityLevel() >= MAX_STAT_LEVEL
+                && this.getPillowPawLevel() >= MAX_STAT_LEVEL
+                && this.getIronHideLevel() >= MAX_STAT_LEVEL;
     }
 
     public void applyStatLevels() {

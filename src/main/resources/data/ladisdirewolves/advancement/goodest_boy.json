@@ -1,0 +1,33 @@
+{
+  "parent": "ladisdirewolves:good_boy",
+  "display": {
+    "icon": {
+      "id": "ladisdirewolves:direwolf_treatment"
+    },
+    "title": {
+      "translate": "advancements.ladisdirewolves.goodest_boy.title"
+    },
+    "description": {
+      "translate": "advancements.ladisdirewolves.goodest_boy.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "gave_treat": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "item": {
+          "items": [
+            "ladisdirewolves:direwolf_treatment"
+          ]
+        },
+        "entity": {
+          "type": "ladisdirewolves:direwolf"
+        }
+      }
+    }
+  }
+}

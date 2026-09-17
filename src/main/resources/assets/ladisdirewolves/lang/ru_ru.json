@@ -21,6 +21,17 @@
     "gui.ladisdirewolves.effect.agility": "+2% к скорости бега и прыжку за уровень",
     "gui.ladisdirewolves.effect.pillow_paw": "-5% урона от падения за уровень",
     "gui.ladisdirewolves.effect.iron_hide": "+1 брони за уровень и шанс замедлить атакующего",
-    "item.ladisdirewolves.direwolf_spawn_egg": "Яйце призыва Лютоволка",
-    "itemGroup.ladisdirewolves": "Ladis' Direwolves"
+    "item.ladisdirewolves.direwolf_spawn_egg": "Яйцо призыва Лютоволка",
+    "itemGroup.ladisdirewolves": "Ladis' Direwolves",
+    "advancements.ladisdirewolves.good_boy.title": "Больше, чем просто хороший мальчик",
+    "advancements.ladisdirewolves.good_boy.description": "Накормите обычного волка эволюционным кормом и вырастите Лютоволка.",
+    "advancements.ladisdirewolves.goodest_boy.title": "Кто хороший мальчик?",
+    "advancements.ladisdirewolves.goodest_boy.description": "Угостите Лютоволка его первым лакомством для обучения.",
+    "advancements.ladisdirewolves.dog_waltz.title": "Собачий вальс",
+    "advancements.ladisdirewolves.dog_waltz.description": "Скрафтите свисток для управления и прокачки вашего спутника.",
+    "advancements.ladisdirewolves.fast_and_furryous.title": "Пушистый Форсаж!",
+    "advancements.ladisdirewolves.fast_and_furryous.description": "Оседлайте Лютоволка и подготовьте его к поездке.",
+    "advancements.ladisdirewolves.perfect_trainer.title": "Идеальный дрессировщик",
+    "advancements.ladisdirewolves.perfect_trainer.description": "Полностью прокачайте все характеристики вашего Лютоволка.",
+    "fml.menu.mods.info.description.ladisdirewolves": "Ladis'' Direwolves — мод, который превращает обычных волков в верных, мощных и прокачиваемых спутников. Забудьте о питомцах, которые мгновенно погибают в бою — теперь ваш волк станет настоящим боевым партнёром и надёжным скакуном!"
 }

@@ -1,0 +1,33 @@
+{
+  "display": {
+    "icon": {
+      "id": "ladisdirewolves:direwolf_food"
+    },
+    "title": {
+      "translate": "advancements.ladisdirewolves.good_boy.title"
+    },
+    "description": {
+      "translate": "advancements.ladisdirewolves.good_boy.description"
+    },
+    "background": "ladisdirewolves:textures/gui/advancements/backgrounds/direwolf.png",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "fed_wolf": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "item": {
+          "items": [
+            "ladisdirewolves:direwolf_food"
+          ]
+        },
+        "entity": {
+          "type": "minecraft:wolf"
+        }
+      }
+    }
+  }
+}

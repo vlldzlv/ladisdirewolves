@@ -38,8 +38,8 @@ public class ModItems {
             ITEMS.register("direwolf_spawn_egg",
                     () -> new DeferredSpawnEggItem(
                             ModEntities.DIREWOLF,
-                            0x5C5C5C,
-                            0x3A3A3A,
+                            0xFFFFFF,
+                            0xFFFFFF,
                             new Item.Properties()
                     ));
 }

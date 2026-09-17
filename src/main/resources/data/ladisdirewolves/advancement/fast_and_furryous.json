@@ -1,0 +1,33 @@
+{
+  "parent": "ladisdirewolves:good_boy",
+  "display": {
+    "icon": {
+      "id": "minecraft:saddle"
+    },
+    "title": {
+      "translate": "advancements.ladisdirewolves.fast_and_furryous.title"
+    },
+    "description": {
+      "translate": "advancements.ladisdirewolves.fast_and_furryous.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "saddled": {
+      "trigger": "minecraft:player_interacted_with_entity",
+      "conditions": {
+        "item": {
+          "items": [
+            "minecraft:saddle"
+          ]
+        },
+        "entity": {
+          "type": "ladisdirewolves:direwolf"
+        }
+      }
+    }
+  }
+}

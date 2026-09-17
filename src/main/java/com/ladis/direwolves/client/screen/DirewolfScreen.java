@@ -7,7 +7,9 @@ import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ServerboundContainerButtonClickPacket;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
+import com.ladis.direwolves.LadisDirewolves;
 import com.ladis.direwolves.entity.DirewolfEntity;
 import com.ladis.direwolves.menu.DirewolfMenu;
 
@@ -16,13 +18,29 @@ import java.util.Map;
 
 public class DirewolfScreen extends AbstractContainerScreen<DirewolfMenu> {
 
-    private static final int ROW_SPACING = 34;
+    private static final ResourceLocation GUI_TEXTURE =
+            ResourceLocation.fromNamespaceAndPath(LadisDirewolves.MOD_ID, "textures/gui/direwolf.png");
+    private static final int TEXTURE_U = 20;
+    private static final int TEXTURE_V = 1;
+    private static final int CONTENT_WIDTH = 146;
+    private static final int CONTENT_HEIGHT = 180;
+    private static final int GUI_WIDTH = 176;
+    private static final int GUI_HEIGHT = 217;
+    private static final int ROW_SPACING = 28;
+    private static final int COLOR_TEXT = 0x46332D;
+    private static final int SHADOW_TEXT = 0xC1A59D;
+    private static final int COLOR_MUTED = 0xB4A48B;
+    private static final int SHADOW_MUTED = 0xE1D3BD;
+    private static final int COLOR_TREATS = 0x886C3A;
+    private static final int SHADOW_TREATS = 0xBEAA87;
+    private static final int COLOR_HP = 0x5C6F43;
+    private static final int SHADOW_HP = 0x9CA68F;
     private final Map<DirewolfEntity.Stat, Button> upgradeButtons = new EnumMap<>(DirewolfEntity.Stat.class);
 
     public DirewolfScreen(DirewolfMenu menu, Inventory playerInventory, Component title) {
         super(menu, playerInventory, title);
-        this.imageWidth = 176;
-        this.imageHeight = 222;
+        this.imageWidth = GUI_WIDTH;
+        this.imageHeight = GUI_HEIGHT;
     }
 
     @Override
@@ -30,7 +48,7 @@ public class DirewolfScreen extends AbstractContainerScreen<DirewolfMenu> {
         super.init();
         for (DirewolfEntity.Stat stat : DirewolfEntity.Stat.values()) {
             Button button = Button.builder(Component.literal("+"), b -> this.buyUpgrade(stat))
-                    .bounds(this.leftPos + 142, this.topPos + 34 + stat.ordinal() * ROW_SPACING + 7, 20, 20)
+                    .bounds(this.leftPos + GUI_WIDTH - 44, this.topPos + 38 + stat.ordinal() * ROW_SPACING - 1, 20, 20)
                     .tooltip(this.upgradeTooltip(stat))
                     .build();
             this.upgradeButtons.put(stat, button);
@@ -80,46 +98,43 @@ public class DirewolfScreen extends AbstractContainerScreen<DirewolfMenu> {
     protected void renderBg(GuiGraphics guiGraphics, float partialTick, int mouseX, int mouseY) {
         int x = this.leftPos;
         int y = this.topPos;
-        guiGraphics.fill(x, y, x + this.imageWidth, y + this.imageHeight, 0xC0161616);
-        guiGraphics.fill(x + 1, y + 1, x + this.imageWidth - 1, y + this.imageHeight - 1, 0xCC242424);
-        guiGraphics.fill(x + 8, y + 31, x + this.imageWidth - 8, y + 32, 0xFF3A3A3A);
-        for (int i = 1; i < DirewolfEntity.Stat.values().length + 1; i++) {
-            int lineY = y + 34 + i * ROW_SPACING - 3;
-            guiGraphics.fill(x + 8, lineY, x + this.imageWidth - 8, lineY + 1, 0x553A3A3A);
-        }
+        guiGraphics.blit(GUI_TEXTURE, x, y, GUI_WIDTH, GUI_HEIGHT, TEXTURE_U, TEXTURE_V, CONTENT_WIDTH, CONTENT_HEIGHT, 256, 256);
     }
 
     @Override
     protected void renderLabels(GuiGraphics guiGraphics, int mouseX, int mouseY) {
-        guiGraphics.drawString(this.font, this.title, 8, 6, 0xFFFFFF);
+        this.drawShadowed(guiGraphics, this.title, this.centeredX(this.title), 12, COLOR_TEXT, SHADOW_TEXT);
         DirewolfEntity direwolf = this.menu.getDirewolf();
         if (direwolf == null) {
             return;
         }
-        guiGraphics.drawString(
-                this.font,
-                Component.translatable("gui.ladisdirewolves.treats", direwolf.getTreats()),
-                10, 20, 0xE8C25A);
-        guiGraphics.drawString(
-                this.font,
-                Component.translatable("gui.ladisdirewolves.hp",
-                        (int) Math.ceil(direwolf.getHealth()),
-                        (int) Math.ceil(direwolf.getMaxHealth())),
-                10, 206, 0x55FF55);
+        Component treats = Component.translatable("gui.ladisdirewolves.treats", direwolf.getTreats());
+        this.drawShadowed(guiGraphics, treats, this.centeredX(treats), 26, COLOR_TREATS, SHADOW_TREATS);
+        Component hp = Component.translatable("gui.ladisdirewolves.hp",
+                (int) Math.ceil(direwolf.getHealth()),
+                (int) Math.ceil(direwolf.getMaxHealth()));
+        this.drawShadowed(guiGraphics, hp, this.centeredX(hp), 182, COLOR_HP, SHADOW_HP);
         int i = 0;
         for (DirewolfEntity.Stat stat : DirewolfEntity.Stat.values()) {
-            int rowY = 34 + i * ROW_SPACING;
-            guiGraphics.drawString(
-                    this.font,
+            int rowY = 38 + i * ROW_SPACING;
+            this.drawShadowed(guiGraphics,
                     Component.translatable("gui.ladisdirewolves." + stat.name().toLowerCase()),
-                    10, rowY, 0xFFFFFF);
+                    18, rowY, COLOR_TEXT, SHADOW_TEXT);
             int level = stat.getLevel(direwolf);
-            guiGraphics.drawString(
-                    this.font,
+            this.drawShadowed(guiGraphics,
                     Component.literal("Lv " + level + "/" + DirewolfEntity.MAX_STAT_LEVEL),
-                    78, rowY + 11, 0xA9A9A9);
+                    18, rowY + 11, COLOR_MUTED, SHADOW_MUTED);
             i++;
         }
+    }
+
+    private int centeredX(Component text) {
+        return (GUI_WIDTH - this.font.width(text)) / 2;
+    }
+
+    private void drawShadowed(GuiGraphics guiGraphics, Component text, int x, int y, int color, int shadowColor) {
+        guiGraphics.drawString(this.font, text, x + 1, y + 1, shadowColor, false);
+        guiGraphics.drawString(this.font, text, x, y, color, false);
     }
 
     @Override

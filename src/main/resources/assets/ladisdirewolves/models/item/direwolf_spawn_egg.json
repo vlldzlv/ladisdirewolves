@@ -1,5 +1,6 @@
 {
-    "parent": "minecraft:item/generated",
+    "parent": "item/generated",
+    "gui_light": "front",
     "textures": {
         "layer0": "ladisdirewolves:item/direwolf_spawn_egg"
     }

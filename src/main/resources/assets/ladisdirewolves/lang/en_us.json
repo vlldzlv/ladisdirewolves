@@ -1,7 +1,7 @@
 {
     "item.ladisdirewolves.direwolf_food": "Direwolf Food",
     "item.ladisdirewolves.direwolf_food.description": "Feed it to a regular wolf to turn it into a ferocious Direwolf. Not recommended for consumption.",
-    "item.ladisdirewolves.direwolf_treatment": "Direwolf Treat",
+    "item.ladisdirewolves.direwolf_treatment": "Treat",
     "item.ladisdirewolves.direwolf_treatment.description": "Used to train a Direwolf. Gives points to level up its stats.",
     "item.ladisdirewolves.whistle": "Whistle",
     "item.ladisdirewolves.whistle.description": "Opens the Direwolf training interface to improve its stats.",
@@ -23,5 +23,16 @@
     "gui.ladisdirewolves.effect.iron_hide": "+1 armor per level and chance to slow attacker",
     "gui.ladisdirewolves.bag": "Direwolf Bag",
     "item.ladisdirewolves.direwolf_spawn_egg": "Direwolf Spawn Egg",
-    "itemGroup.ladisdirewolves": "Ladis' Direwolves"
+    "itemGroup.ladisdirewolves": "Ladis' Direwolves",
+    "advancements.ladisdirewolves.good_boy.title": "Not Just a Good Boy",
+    "advancements.ladisdirewolves.good_boy.description": "Feed a regular wolf evolution food to raise a Direwolf.",
+    "advancements.ladisdirewolves.goodest_boy.title": "Who's a Good Boy?",
+    "advancements.ladisdirewolves.goodest_boy.description": "Give your Direwolf its very first training treat.",
+    "advancements.ladisdirewolves.dog_waltz.title": "The Dog Waltz",
+    "advancements.ladisdirewolves.dog_waltz.description": "Craft a whistle to command and train your companion.",
+    "advancements.ladisdirewolves.fast_and_furryous.title": "Fast & Furry-ous!",
+    "advancements.ladisdirewolves.fast_and_furryous.description": "Saddle up your Direwolf and prepare for the ride.",
+    "advancements.ladisdirewolves.perfect_trainer.title": "The Perfect Trainer",
+    "advancements.ladisdirewolves.perfect_trainer.description": "Fully max out all of your Direwolf's stats.",
+    "fml.menu.mods.info.description.ladisdirewolves": "Ladis'' Direwolves is a mod that transforms ordinary wolves into loyal, powerful, and upgradable companions. Forget about pets that quickly perish in battle — now your wolf will become a true combat partner and a reliable mount!"
 }

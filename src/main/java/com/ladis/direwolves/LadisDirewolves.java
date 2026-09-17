@@ -11,6 +11,7 @@ import com.ladis.direwolves.init.ModItems;
 import com.ladis.direwolves.init.ModMenus;
 import com.ladis.direwolves.init.ModCreativeTab;
 import com.ladis.direwolves.init.ModSounds;
+import com.ladis.direwolves.init.ModTriggers;
 import com.ladis.direwolves.item.DirewolfFoodItem;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
@@ -30,6 +31,7 @@ public class LadisDirewolves {
         ModMenus.MENUS.register(modEventBus);
         ModCreativeTab.CREATIVE_TABS.register(modEventBus);
         ModSounds.SOUND_EVENTS.register(modEventBus);
+        ModTriggers.TRIGGERS.register(modEventBus);
         NeoForge.EVENT_BUS.addListener(this::onEntityInteract);
 
         LOGGER.info("Ladis' Direwolves loaded!");

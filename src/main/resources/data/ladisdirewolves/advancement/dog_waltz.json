@@ -1,0 +1,26 @@
+{
+  "parent": "ladisdirewolves:good_boy",
+  "display": {
+    "icon": {
+      "id": "ladisdirewolves:whistle"
+    },
+    "title": {
+      "translate": "advancements.ladisdirewolves.dog_waltz.title"
+    },
+    "description": {
+      "translate": "advancements.ladisdirewolves.dog_waltz.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "crafted_whistle": {
+      "trigger": "minecraft:recipe_crafted",
+      "conditions": {
+        "recipe_id": "ladisdirewolves:whistle"
+      }
+    }
+  }
+}
